@@ -1,0 +1,14 @@
+
+
+known issues :
+   - overlapping ( inconsistency in dimension )
+   -
+
+to do :
+    - create menu
+    - add required .pngs
+    - add color combinations
+    - add monstors
+    - add customizations
+    - create levels
+    - oop
