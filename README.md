@@ -5,7 +5,7 @@
 ### How to play
 > Download this repository and run `main.py`
 ### Controls
-> Right click : Fire
+> Left click : Fire
 
 > Up-Down arrow keys to move
 

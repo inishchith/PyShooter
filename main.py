@@ -28,6 +28,8 @@ white=(255, 255, 255)
 # text + bullet
 black= (0, 0, 0)
 
+black_comp = (176,190,197)
+
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
     return textSurface, textSurface.get_rect()
@@ -62,15 +64,16 @@ def bull(x,y):
         x+=40
 
 def score_keeper(count):
+    li=[0]
     # current score
     font = pygame.font.SysFont(None, 25)
     text = font.render("kills : " + str(count), True, black)
     screen.blit(text, (0, 0))
-
+    li.append(count)
     # high score
 
     font = pygame.font.SysFont(None, 25)
-    text = font.render("High Score : " + str(count), True, black)
+    text = font.render("High Score : " + str(max(li)), True, black)
     screen.blit(text, (400, 0))
 
 
@@ -115,7 +118,7 @@ def start_game():
                 print(" boundry triggered ")
 
 
-        screen.fill(white)
+        screen.fill(black_comp)
         #background home : screen.blit(homebg, (-30,350))
 
 
@@ -130,8 +133,8 @@ def start_game():
         if count==50 :
             count=0
             monster_version = random.randrange(1, 5)
-            monster_width = random.randrange(0, 780)
-            monster_height = random.randrange(0, 550)
+            monster_width = random.randrange(0, 680)
+            monster_height = random.randrange(0, 480)
 
         # dyanmic shooter display
         move(shoot,shooter_x,shooter_y)
@@ -140,7 +143,7 @@ def start_game():
         # issue here
         #time.sleep(5)
 
-        if monster_height<= (shooter_y+67) <=(monster_height+150) and shot == 1:
+        if monster_height<= (shooter_y+67) <=(monster_height+100) and shot == 1:
             if monster_width != prew and monster_height != prevh :
                 kill += 1
             prevh = monster_height
@@ -149,6 +152,7 @@ def start_game():
 
         # dead screen
         if (shooter_x+10)<=monster_width<=(shooter_x+120) and monster_height>=(shooter_y+40) and (monster_height)<=(shooter_y+140):
+            time.sleep(1)
             message_display("Your Score : "+ str(kill))
 
         score_keeper(kill)
