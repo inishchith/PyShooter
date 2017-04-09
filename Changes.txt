@@ -1,4 +1,4 @@
-
+- cleaned (9-4-17)
 
 known issues :
    - overlapping ( inconsistency in dimension )
@@ -9,4 +9,3 @@ to do :
     - add color combinations
     - add monstors , customizations
     - create levels
-    - oop
